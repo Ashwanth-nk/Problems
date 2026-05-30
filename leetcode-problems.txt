@@ -99,4 +99,79 @@ var minElement = function(nums) {
     }
     return least;
 };
+
+
+// Easy
+// 69. Sqrt(x)
+// 8% Runtime, 6% Memory 
+// Dint learn binary search yet so code inefficient
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(x) {
+    if (x<2){
+        return x
+    }
+    for (let i = 1; i<=x/2; i++){
+        if (i*i === x || (i+1)*(i+1) > x){
+            return i
+        } 
+    } 
+};
+
+
+// Easy
+// 70. Climbing Stairs
+// 100% Runtime, 69% Memory
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    if (n<4 === true){
+        return n
+    }
+    let a = 1
+    let b = 1
+    let result = 0;
+    for (let i = 0; i<=n-2; i++){
+        result = a+b;
+        a = b;
+        b = result;
+    }
+    return result;
+    
+};
+
+
+
+// Medium
+// 3223. Minimum Length of String After Operations
+// 14% Runtime, 98% Memory
+class Solution:
+    def minimumLength(self, s: str) -> int:
+        d = {}
+        for i in s:
+            if d.get(i,'default') == 'default':
+                d[i]=1
+            else:
+                d[i]+=1
+        ans = 0
+        for j in d.keys():
+            if d[j]%2==0:
+                ans+=2
+            else:
+                ans+=1
+        return ans
+
+// Easy
+// 136. Single Number
+// 5% Runtime, 93% Memory
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        for i in nums:
+            if nums.count(i) == 1:
+                return i
+        
 '''
