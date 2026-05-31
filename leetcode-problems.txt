@@ -173,5 +173,50 @@ class Solution:
         for i in nums:
             if nums.count(i) == 1:
                 return i
-        
+
+// Easy
+// 121. Best Time to Buy and Sell Stock
+// 23% Runtime, 42% Memory      
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if len(prices) == 1:
+            return 0
+        buy = prices[0]
+        sell = prices[0]
+        diff = 0
+        i=0
+        if len(prices)==2:
+            if prices[0]<prices[1]:
+                return prices[1]-prices[0]
+            else:
+                return 0
+        while i<len(prices):
+            if prices[i] < buy and i!=len(prices)-1:
+                buy = prices[i]
+                sell = prices[i]
+            elif prices[i] < buy and i==len(prices)-1:
+                return diff
+            elif prices[i] > sell and i!=len(prices)-1:
+                sell = prices[i]
+                if diff<sell-buy:
+                    diff = sell-buy
+            elif prices[i] > sell and i==len(prices)-1:
+                return max(prices[i]-buy, diff)
+            i+=1
+        return diff
+
+
+// Easy
+// 242. Valid Anagram
+// 5% Runtime, 43% Memory      
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s)!=len(t):
+            return False
+        for i in s:
+            if i not in t:
+                return False
+            if t.count(i) != s.count(i):
+                return False
+        return True
 '''
