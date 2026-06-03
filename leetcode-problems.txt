@@ -299,4 +299,25 @@ var searchInsert = function(nums, target) {
         return i;
     }
 };
+
+// Easy
+// 66. Plus One
+// 100% Runtime, 18% Memory
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        digits[-1]+=1
+        if digits[-1]<9:
+            return digits
+        j = 0
+        print(digits)
+        i = 0
+        while j < len(digits):
+            i = (i*10)+digits[j]
+            j+=1
+        ans = []
+        while i > 0:
+            ans.append(i%10)
+            i//=10
+        return ans[::-1]
+        
 '''
