@@ -320,4 +320,19 @@ class Solution:
             i//=10
         return ans[::-1]
         
+// Easy
+// 217. Contains Duplicate
+// 6% Runtime, 99% Memory
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if len(nums)==1:
+            return False
+        nums = sorted(nums)
+        i = 0
+        while i<len(nums)-1:
+            if nums[i]==nums[i+1]:
+                return True
+            i+=1
+        return False
+        
 '''
