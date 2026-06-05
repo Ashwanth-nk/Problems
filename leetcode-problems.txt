@@ -335,4 +335,21 @@ class Solution:
             i+=1
         return False
         
+
+                
+// Easy
+// 258. Add Digits 
+// 23% Runtime, 16% Memory
+
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while num>9:
+            dum = 0
+            x = num
+            while x>0:
+                dum += x%10
+                x//=10
+            num = dum
+        return num
+        
 '''
