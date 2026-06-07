@@ -367,5 +367,18 @@ class Solution:
             i+=1
         return ans
         
+
+// Easy
+// 1512. Number of Good Pairs
+// 100% Runtime, 18% Memory
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        ans = 0
+        i = 0
+        while i<len(nums)-1:
+            ans += nums[i+1:].count(nums[i])
+            i+=1
+        return ans
+        
         
 '''
