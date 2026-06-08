@@ -397,4 +397,20 @@ class Solution:
                 return i
         return max(nums)
         
+// Medium
+// 2161. Partition Array According to Given Pivot
+// 49% Runtime, 91% Memory  
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        ans = [pivot]*nums.count(pivot)
+        left = []
+        for i in nums:
+            if i>pivot:
+                ans.append(i)
+            elif i<pivot:
+                left += [i]
+        ans = left + ans
+        return ans
+            
+        
 '''
