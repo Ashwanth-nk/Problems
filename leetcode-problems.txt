@@ -379,6 +379,22 @@ class Solution:
             ans += nums[i+1:].count(nums[i])
             i+=1
         return ans
-        
+ 
+// Easy
+// 414. Third Maximum Number
+// 31% Runtime, 73% Memory       
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        if len(nums)<3:
+            return max(nums)
+        l = sorted(nums, reverse=True)
+        x = []
+        print(l)
+        for i in l:
+            if i not in x:
+                x+=[i]
+            if len(x)==3:
+                return i
+        return max(nums)
         
 '''
