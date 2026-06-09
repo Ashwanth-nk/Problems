@@ -411,6 +411,20 @@ class Solution:
                 left += [i]
         ans = left + ans
         return ans
-            
+
+// Easy
+// 2553. Separate the Digits in an Array
+// 10% Runtime, 84% Memory  
+  class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        ans = []
+        for i in nums:
+            current = []
+            while i>0:
+                current = [i%10]+current
+                i //= 10
+            ans = ans + current
+        return ans
+             
         
 '''
