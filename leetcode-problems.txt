@@ -425,6 +425,16 @@ class Solution:
                 i //= 10
             ans = ans + current
         return ans
-             
-        
+
+// Easy
+// 344. Reverse String
+// 100% Runtime, 80% Memory  
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        i,j = 0,len(s)-1
+        while i<=j:
+            s[i],s[j]=s[j],s[i]
+            i+=1
+            j-=1
+
 '''
