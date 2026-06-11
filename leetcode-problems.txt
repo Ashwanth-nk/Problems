@@ -437,4 +437,25 @@ class Solution:
             i+=1
             j-=1
 
+
+// Easy
+// 202. Happy Number
+// 100% Runtime, 60% Memory
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        happy = False
+        while happy == False:
+            if n in [1,7]:
+                return True
+            elif n in [2,3,4,5,6,8,9]:
+                return False
+            else:
+                l = 0
+                while n > 0:
+                    l += (n%10)**2
+                    n//=10
+                n = l
+
+                    
+
 '''
