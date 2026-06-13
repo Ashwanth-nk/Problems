@@ -466,4 +466,20 @@ class Solution:
             if i not in s or t.count(i)!= s.count(i):
                 return i
         
+// Easy
+// 3407. Substring Matching Pattern
+// 100% Runtime, 69% Memory
+class Solution:
+    def hasMatch(self, s: str, p: str) -> bool:
+        p = p.split('*')
+        if p[0] in s and not p[1]:
+            return True
+        elif p[1] in s and not p[0]:
+            return True
+        elif p[0] in s and p[1] in s:
+            x = s.index(p[0])
+            if p[1] in s[x+len(p[0]):]:
+                return True
+        return False
+        
 '''
