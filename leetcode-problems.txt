@@ -481,5 +481,19 @@ class Solution:
             if p[1] in s[x+len(p[0]):]:
                 return True
         return False
+
+// Easy
+// 2974. Minimum Number Game
+// 100% Runtime, 28% Memory
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+        x = sorted(nums)
+        i,j = 0,1
+        while j<len(nums):
+            x[i],x[j] = x[j],x[i]
+            i+=2
+            j+=2
+        return x
+
         
 '''
