@@ -504,5 +504,29 @@ class Solution:
         return len(set(s))
         
 
-        
+// Easy
+// 387. First Unique Character in a String
+// 5% Runtime, 88% Memory
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        for i in s:
+            if s.count(i)==1:
+                return s.index(i)
+        return -1
+
+
+// Easy
+// 169. Majority Element
+// 100% Runtime, 52% Memory           
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        i = 0
+        j = len(nums)//2
+        while j<len(nums):
+            if nums[i]==nums[j]:
+                return nums[i]
+            i+=1
+            j+=1
+
 '''
