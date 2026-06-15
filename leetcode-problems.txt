@@ -529,4 +529,16 @@ class Solution:
             i+=1
             j+=1
 
+// Medium
+// 49. Group Anagrams
+// 43% Runtime, 97% Memory 
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        d = {}
+        for i in strs:
+            x = "".join(sorted(list(i)))
+            d[x] = d.get(x,[]) + [i]
+        return list(d.values())
+        
+
 '''
