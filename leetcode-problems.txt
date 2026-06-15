@@ -531,7 +531,7 @@ class Solution:
 
 // Medium
 // 49. Group Anagrams
-// 43% Runtime, 97% Memory 
+// 83% Runtime, 97% Memory 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         d = {}
