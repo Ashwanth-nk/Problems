@@ -561,6 +561,22 @@ class Solution:
             else:
                 ans.append(i)
         return "".join(ans)
+
+
+// Easy
+// 1344. Angle Between Hands of a Clock
+// 100% Runtime, 45% Memory
+class Solution:
+    def angleClock(self, hour: int, minutes: int) -> float:
+        if hour == 12:
+            hour = 0
+        hr = (hour + (minutes/60)) * 5
+        if minutes>hr:  
+            return min( abs((hr+(60-minutes)))*6 , abs((minutes-hr)*6 ))
+        else:
+            return min(abs((minutes+(60-hr)))*6 , abs((hr-minutes)*6 ))
+
+            
         
         
 
