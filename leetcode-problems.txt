@@ -576,8 +576,26 @@ class Solution:
         else:
             return min(abs((minutes+(60-hr)))*6 , abs((hr-minutes)*6 ))
 
-            
-        
-        
 
+// Easy
+// 2243. Calculate Digit Sum of a String
+// 100% Runtime, 22% Memory     
+class Solution:
+    def digitSum(self, s: str, k: int) -> str:
+        while len(s)>k:
+            new = ""
+            i = 0
+            j = k
+            while i<len(s):
+                newStr = s[i:j]
+                newInt = 0
+                for a in newStr:
+                    newInt += int(a)
+                new += str(newInt)
+                i+=k
+                j+=k
+            s = new
+        return s
+
+        
 '''
