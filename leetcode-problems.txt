@@ -563,7 +563,7 @@ class Solution:
         return "".join(ans)
 
 
-// Easy
+// Medium
 // 1344. Angle Between Hands of a Clock
 // 100% Runtime, 45% Memory
 class Solution:
