@@ -612,6 +612,29 @@ class Solution:
             new = new + gain[i]
         return max(ansList)
 
+
+// Easy
+// 1592. Rearrange Spaces Between Words
+// 100% Runtime, 19% Memory     
+class Solution:
+    def reorderSpaces(self, text: str) -> str:
+        ans = ""
+        spaceCount = text.count(" ")
+        if spaceCount == 0:
+            return text
+        splittedText = text.split()
+        l = len(splittedText)
+        if l!= 1:
+            spaceWidth = spaceCount//(l-1)
+        for i in range(l):
+            if i != l-1:
+                ans+=(splittedText[i]+(" "* spaceWidth ))
+                spaceCount -= spaceWidth
+            else:
+                ans+=(splittedText[i]+(" "* spaceCount))
+        return ans
+
+
         
         
 '''
